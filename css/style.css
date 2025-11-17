@@ -305,8 +305,7 @@
     overflow: hidden;
 }
 
-.team-item .team-body .team-before,
-.team-item .team-body .team-after {
+.team-item .team-body .team-before {
     position: absolute;
     content: "";
     width: 0;
@@ -320,6 +319,11 @@
     transition: .5s;
 }
 
+/* Remove team-after from sliding */
+.team-item .team-body .team-after {
+    display: none;
+}
+
 .team-item .team-body .team-after {
     left: auto;
     right: 0;
@@ -329,10 +333,12 @@
     text-align: right;
 }
 
-.team-item:hover .team-body .team-before,
-.team-item:hover .team-body .team-after {
-    width: 50%;
+.team-item:hover .team-body .team-before{
+    width: 70%;
 }
+/* .team-item:hover .team-body .team-after {
+
+} */
 
 .team-item .team-body .team-before span,
 .team-item .team-body .team-after span {
