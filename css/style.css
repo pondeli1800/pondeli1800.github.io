@@ -400,9 +400,9 @@
     }
 }
 
-.footer {
+/* .footer {
 	background-image: url(../img/footer-bg.png);
 	background-position: 0px 0px;
     background-repeat: repeat-x;
-	animation: footerAnimatedBg 50s linear infinite;
-}
+	animation: footerAnimatedBg 50s linear infinite; 
+} */
