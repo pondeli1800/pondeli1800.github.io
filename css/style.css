@@ -394,6 +394,11 @@
     opacity: 1;
 }
 
+.lightbox-gallery img {
+  width: 350px;
+  margin: 5px;
+  border-radius: 8px;
+}
 
 /*** Footer ***/
 /* @keyframes footerAnimatedBg {
