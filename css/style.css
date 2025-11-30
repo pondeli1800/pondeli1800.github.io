@@ -4,6 +4,13 @@
     --bs-primary-rgb: 214, 0, 0;    /* same red in RGB format */
 }
 
+/* Change form input focus outline to use --bs-primary (red) */
+.form-control:focus {
+    border-color: var(--bs-primary); /* solid border */
+    outline: none;
+    /* red glow with alpha using the RGB variable */
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.40);
+}
 
 a {
     color: var(--bs-primary);
