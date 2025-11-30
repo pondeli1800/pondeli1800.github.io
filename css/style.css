@@ -184,7 +184,10 @@
     margin-bottom: 2rem;
 }
 
-.title .title-left,
+.title .title-left
+{
+    font-family: "Your Font Name", sans-serif;
+}
 .title .title-center,
 .title .title-right {
     display: inline-block;
