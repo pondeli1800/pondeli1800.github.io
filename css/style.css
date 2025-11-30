@@ -1,4 +1,40 @@
 /********** Template CSS **********/
+:root {
+    --bs-primary: #d60000;          /* solid red */
+    --bs-primary-rgb: 214, 0, 0;    /* same red in RGB format */
+}
+
+
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: #fff !important;
+}
+
+/* Navbar links using primary */
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--bs-primary) !important;
+}
+
+/* Text / background / borders using primary */
+.text-primary { color: var(--bs-primary) !important; }
+.bg-primary { background-color: var(--bs-primary) !important; }
+.border-primary { border-color: var(--bs-primary) !important; }
+
+
 
 .back-to-top {
     position: fixed;
