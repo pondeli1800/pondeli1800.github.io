@@ -179,7 +179,12 @@ a {
     vertical-align: middle;
     margin-left: 8px;
 }
-
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus,
+.navbar .dropdown-menu .dropdown-item.active {
+    color: var(--bs-primary) !important;
+    background-color: rgba(var(--bs-primary), 0.1) !important;
+}
 
 /*** Header ***/
 .carousel-caption {
