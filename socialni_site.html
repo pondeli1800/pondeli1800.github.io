@@ -84,31 +84,40 @@
     </div>
     <!-- Header End -->
 
-<div class="container-fluid py-5 bg-secondary">
-        <div style="display: flex; justify-content: center;">
+    <div class="container-fluid py-5 bg-secondary">
 
-<div class="instagram-embed">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/pondeli_18_00/" data-instgrm-version="14"></blockquote>
-    <script async src="//www.instagram.com/embed.js"></script>
+        <!-- Instagram -->
+        <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+            <blockquote 
+                class="instagram-media" 
+                data-instgrm-permalink="https://www.instagram.com/pondeli_18_00/" 
+                data-instgrm-version="14">
+            </blockquote>
+        </div>
+
+        <!-- Instagram embed script (must be after blockquote) -->
+        <script async src="https://www.instagram.com/embed.js"></script>
+
+
+        <!-- Facebook -->
+        <div style="display: flex; justify-content: center; margin-top: 40px;">
+            <div class="fb-page" 
+                data-href="https://www.facebook.com/pondeli18.00"
+                data-tabs="timeline"
+                data-width="500"
+                data-small-header="false"
+                data-hide-cover="false"
+                data-show-facepile="true">
+            </div>
+        </div>
+
+        <!-- Facebook SDK -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0">
+        </script>
+
     </div>
-    
-</div>
-
-<!-- 
-<div style="display: flex; justify-content: center;">
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" 
-    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
-
-    <div class="fb-page" 
-         data-href="https://www.facebook.com/pondeli18.00"
-         data-tabs="timeline"
-         data-width="500"
-         data-small-header="false"
-         data-hide-cover="false"
-         data-show-facepile="true">
-    </div>
-</div> -->
     <!-- Testimonial Start -->
     <!-- <div class="container-fluid py-5 bg-secondary">
         <div class="container py-5">
