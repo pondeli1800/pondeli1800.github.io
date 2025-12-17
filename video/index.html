@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Pondělí 18:00 - Sociální sítě</title>
+    <title>Pondělí 18:00 - Videa</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -14,7 +14,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
@@ -34,18 +36,18 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Načítá se</span>
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
 
 
-
     <!-- Header Start -->
-     <div class="container-fluid p-0">
-        <!-- Navigation Start -->
+    <div class="container-fluid p-0">
+                <!-- Navigation Start -->
         <nav class="navbar navbar-expand-lg navbar-dark px-lg-5">
             <a href="/" class="navbar-brand ms-4 ms-lg-0">
             <img src="/favicon.ico" alt="Logo" style="height: 40px;">
@@ -63,8 +65,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Média</a>
                         <div class="dropdown-menu m-0">
                             <a href="/fotogalerie/" class="dropdown-item">Fotogalerie</a>
-                            <a href="video.html" class="dropdown-item">Videa</a>
-                            <a href="socialni_site.html" class="dropdown-item">Sociální sítě</a>
+                            <a href="/video/" class="dropdown-item">Videa</a>
+                            <a href="/socialni_site/" class="dropdown-item">Sociální sítě</a>
                         </div>
                     </div>
                     <a href="/kontakt/" class="nav-item nav-link">Kontakt</a>
@@ -78,77 +80,107 @@
 
         <div class="page-header pb-5">
             <div class="container text-center py-5">
-                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Sociální sítě</h1>
+                <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Videa</h1>
             </div>
         </div>
     </div>
     <!-- Header End -->
 
-    <div class="container-fluid py-5 bg-secondary">
 
-        <!-- Instagram -->
-        <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-            <blockquote 
-                class="instagram-media" 
-                data-instgrm-permalink="https://www.instagram.com/pondeli_18_00/" 
-                data-instgrm-version="14">
-            </blockquote>
-        </div>
+<!--
+<section class="container my-5">
+  <article class="row justify-content-center">
+    <div class="col-lg-8">
 
-        <!-- Instagram embed script (must be after blockquote) -->
-        <script async src="https://www.instagram.com/embed.js"></script>
+      <header class="mb-4">
+        <h2 class="fw-bold">Article Title</h2>
+        <p class="text-muted mb-1">Subtitle / short description</p>
+        <p class="text-muted small">Published: DD.MM.YYYY</p>
+        <hr>
+      </header>
 
+       Optional featured media (image or video) -->
+      <!--
+      <div class="mb-4">
+        <img src="img/example.jpg" class="img-fluid rounded" alt="Article image">
+      </div>
+      -->
 
-        <!-- Facebook -->
-        <div style="display: flex; justify-content: center; margin-top: 40px;">
-            <div class="fb-page" 
-                data-href="https://www.facebook.com/pondeli18.00"
-                data-tabs="timeline"
-                data-width="500"
-                data-small-header="false"
-                data-hide-cover="false"
-                data-show-facepile="true">
-            </div>
-        </div>
+      <!-- Article content -->
+      <!-- <p>
+        This is the opening paragraph of the article. Use it to briefly introduce
+        the topic and catch the reader’s attention.
+      </p>
 
-        <!-- Facebook SDK -->
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous"
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0">
-        </script>
+      <p>
+        Continue with the main content of the article here. You can add as many
+        paragraphs as needed and structure longer text naturally.
+      </p> -->
+
+      <!-- Optional list -->
+      <!--
+      <ul>
+        <li>First key point</li>
+        <li>Second key point</li>
+        <li>Third key point</li>
+      </ul>
+      -->
+
+      <!-- Optional callout / quote -->
+      <!--
+      <blockquote class="blockquote my-4">
+        <p class="mb-0">A highlighted quote or important message.</p>
+      </blockquote>
+      -->
+
+      <!-- <footer class="mt-4 text-muted small">
+        Author: Name • Category: News / Video / Concert
+      </footer>
 
     </div>
-    <!-- Testimonial Start -->
-    <!-- <div class="container-fluid py-5 bg-secondary">
-        <div class="container py-5">
-            <div class="text-center">
-                <div class="title wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="title-center">
-                        <h1>Our Clients Say</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-1.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h5 class="text-uppercase">Joanne Irwin</h5>
-                    <span class="text-primary">Profession</span>
-                </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-2.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h5 class="text-uppercase">Lana Anderson</h5>
-                    <span class="text-primary">Profession</span>
-                </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-3.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h5 class="text-uppercase">Pamela Torney</h5>
-                    <span class="text-primary">Profession</span>
-                </div>
-            </div>      
-        </div>
-    </div> -->
-    <!-- Testimonial End -->
-        
+  </article>
+</section> -->
+
+
+
+
+
+
+<section class="container my-5">
+<article class="row justify-content-center">
+<div class="col-lg-8">
+<header class="mb-4">
+<h2 class="fw-bold">Teplice 2025</h2>
+<p class="text-muted mb-1">Koncert • Pondělí 18:00</p>
+<hr>
+</header>
+
+
+<!-- Responsive video -->
+<div class="ratio ratio-16x9 mb-4">
+<iframe src="https://www.youtube.com/embed/8xcE0tsTr-I"
+title="Pondělí 18:00 - Edith with the Stick"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen></iframe>
+</div>
+
+
+<!-- Article text -->
+<p>
+Úryvek z naší skladby Edith with Stick z našeho vystoupení na Sjezdu (nejen) Evangelické mládeže v Teplicích.
+</p>
+
+
+<!-- Meta info -->
+<footer class="mt-4 text-muted small">
+Publikováno na YouTube • <a href="https://www.youtube.com/@pondeli_18_00" target="_blank" rel="noopener">@pondeli_18_00</a>
+</footer>
+</div>
+</article>
+</section>
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer py-5 wow fadeIn" data-wow-delay="0.1s">
