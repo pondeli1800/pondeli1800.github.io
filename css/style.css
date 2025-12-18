@@ -118,13 +118,14 @@ a {
     left: 0;
     z-index: 9;
     transition: .5s;
+    background-color: var(--bs-secondary);
 }
 
 .navbar .navbar-nav .nav-link {
     margin-right: 25px;
     padding: 40px 0;
     color: var(--bs-white);
-    background-color: black;
+
     font-size: 17px;
     text-transform: uppercase;
     outline: none;
