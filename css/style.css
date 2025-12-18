@@ -140,7 +140,7 @@ a {
     .navbar .navbar-nav .nav-link,
     .navbar.bg-dark .navbar-nav .nav-link {
         margin-right: 0;
-        padding: 10px 0;
+        padding: 10px 15px;
     }
 
     .navbar .navbar-nav {
