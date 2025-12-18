@@ -124,6 +124,7 @@ a {
     margin-right: 25px;
     padding: 40px 0;
     color: var(--bs-white);
+    background-color: black;
     font-size: 17px;
     text-transform: uppercase;
     outline: none;
