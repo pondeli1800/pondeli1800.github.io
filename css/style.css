@@ -459,17 +459,17 @@ a {
   border-radius: 8px;
 }
 
-    body {
-        padding-top: 80px; /* adjust to match your navbar height */
-    }
+.article-page {
+    /* Push content below fixed navbar */
+    padding-top: 80px; /* adjust to match navbar height */
+}
 
-    /* Center video */
-    .article-content iframe {
-        display: block;
-        /* max-width: 100%;
-        height: auto; */
-        margin: 2rem auto; /* vertical spacing + horizontal centering */
-    }
+.article-page .article-content iframe {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto; /* center and add spacing */
+}
 /*** Footer ***/
 /* @keyframes footerAnimatedBg {
 	0% {
