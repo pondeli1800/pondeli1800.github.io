@@ -9,7 +9,7 @@ title = "Mandava Jazz 2026"
 description = "V říjnu jsem si zahráli na Mandava Jazzu a bylo to mega super"
 youtube_link = ""  # Leave empty if no video
 video_title = "Edith with the Stick #livemusic #concert"
-url_slug = "Aandava-jazz-2026"
+url_slug = "mandava-jazz-2026"
 output_file = f"aktuality/{url_slug}/index.html"
 
 # =========================
