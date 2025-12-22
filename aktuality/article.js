@@ -1,4 +1,5 @@
 const MAX_LENGTH = 160;
+const INITIAL_COUNT = 6; // number of articles to show initially
 
 async function loadArticles() {
   const res = await fetch('/aktuality/articles.json');
@@ -6,19 +7,50 @@ async function loadArticles() {
 
   const container = document.getElementById('articles-list');
 
-  for (const article of articles) {
-    const excerpt = await loadExcerpt(article.url);
+  // create a wrapper div for articles
+  const articlesWrapper = document.createElement('div');
+  articlesWrapper.id = 'articles-wrapper';
+  container.appendChild(articlesWrapper);
 
-    container.innerHTML += `
-      <article class="mb-5">
-        <h2>
-          <a href="${article.url}">${article.title}</a>
-        </h2>
-        <p class="text-muted">${article.meta}</p>
-        <p>${excerpt}</p>
-        <a href="${article.url}">Číst celý článek</a>
-      </article>
-    `;
+  let showingAll = false;
+
+  function renderArticles(count) {
+    articlesWrapper.innerHTML = '';
+
+    for (let i = 0; i < count && i < articles.length; i++) {
+      const article = articles[i];
+      loadExcerpt(article.url).then(excerpt => {
+        const articleHTML = document.createElement('article');
+        articleHTML.className = 'mb-5';
+        articleHTML.innerHTML = `
+          <h2>
+            <a href="${article.url}">${article.title}</a>
+          </h2>
+          <p class="text-muted">${article.meta}</p>
+          <p>${excerpt}</p>
+          <a href="${article.url}">Číst celý článek</a>
+        `;
+        articlesWrapper.appendChild(articleHTML);
+      });
+    }
+  }
+
+  renderArticles(INITIAL_COUNT);
+
+  // Only show "Show more" if there are more articles
+  if (articles.length > INITIAL_COUNT) {
+    const showMoreBtn = document.createElement('button');
+    showMoreBtn.textContent = 'Zobrazit více';
+    showMoreBtn.className = 'btn btn-outline-primary mb-4';
+    container.appendChild(showMoreBtn);
+
+    showMoreBtn.addEventListener('click', () => {
+      if (!showingAll) {
+        renderArticles(articles.length); // show all
+        showMoreBtn.style.display = 'none'; // hide button
+        showingAll = true;
+      }
+    });
   }
 }
 
