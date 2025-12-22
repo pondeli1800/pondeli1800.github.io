@@ -103,11 +103,16 @@ async function loadExcerpt(url) {
 
   if (!content) return '';
 
+  // Remove any link pointing to "/" at the end
+  const backLink = content.querySelector('a[href="/"]');
+  if (backLink) backLink.remove();
+
   const text = content.textContent.trim().replace(/\s+/g, ' ');
 
   return text.length > MAX_LENGTH
     ? text.slice(0, MAX_LENGTH) + '…'
     : text;
 }
+
 
 loadArticles();
