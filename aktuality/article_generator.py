@@ -20,7 +20,7 @@ html_template = Template("""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>$title - Fotogalerie</title>
+    <title>Pondělí 18:00 - $title</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link href="/favicon.ico" rel="icon">
