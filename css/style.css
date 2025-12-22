@@ -464,9 +464,13 @@ a {
 }
 
 .article-page .article-inner {
-    max-width: 700px; /* limit line width for better readability */
-    margin: 0 auto;   /* center horizontally */
+    margin-left: auto;   /* center horizontally */
+    margin-right: auto;
+    padding-left: 1rem;  /* minimal left/right padding for small screens */
+    padding-right: 1rem;
 }
+
+
 
 .article-page .article-content .video-wrapper {
     position: relative;
