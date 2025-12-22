@@ -14,25 +14,30 @@ async function loadArticles() {
 
   let showingAll = false;
 
-  function renderArticles(count) {
+  async function renderArticles(count) {
     articlesWrapper.innerHTML = '';
 
-    for (let i = 0; i < count && i < articles.length; i++) {
-      const article = articles[i];
-      loadExcerpt(article.url).then(excerpt => {
-        const articleHTML = document.createElement('article');
-        articleHTML.className = 'mb-5';
-        articleHTML.innerHTML = `
-          <h2>
-            <a href="${article.url}">${article.title}</a>
-          </h2>
-          <p class="text-muted">${article.meta}</p>
-          <p>${excerpt}</p>
-          <a href="${article.url}">Číst celý článek</a>
-        `;
-        articlesWrapper.appendChild(articleHTML);
-      });
-    }
+    // Get excerpts for the first `count` articles
+    const articlesToShow = articles.slice(0, count);
+    const excerpts = await Promise.all(
+      articlesToShow.map(article => loadExcerpt(article.url))
+    );
+
+    // Append articles in order
+    articlesToShow.forEach((article, i) => {
+      const excerpt = excerpts[i];
+      const articleHTML = document.createElement('article');
+      articleHTML.className = 'mb-5';
+      articleHTML.innerHTML = `
+        <h2>
+          <a href="${article.url}">${article.title}</a>
+        </h2>
+        <p class="text-muted">${article.meta}</p>
+        <p>${excerpt}</p>
+        <a href="${article.url}">Číst celý článek</a>
+      `;
+      articlesWrapper.appendChild(articleHTML);
+    });
   }
 
   renderArticles(INITIAL_COUNT);
