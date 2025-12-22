@@ -49,13 +49,36 @@ async function loadArticles() {
     showMoreBtn.className = 'btn btn-outline-primary mb-4';
     container.appendChild(showMoreBtn);
 
-    showMoreBtn.addEventListener('click', () => {
-      if (!showingAll) {
-        renderArticles(articles.length); // show all
-        showMoreBtn.style.display = 'none'; // hide button
-        showingAll = true;
-      }
-    });
+    showMoreBtn.addEventListener('click', async () => {
+    if (!showingAll) {
+      // Get the number of currently displayed articles
+      const currentCount = articlesWrapper.children.length;
+      const articlesToAdd = articles.slice(currentCount, articles.length);
+      const excerpts = await Promise.all(
+        articlesToAdd.map(article => loadExcerpt(article.url))
+      );
+
+      // Append only the new articles
+      articlesToAdd.forEach((article, i) => {
+        const excerpt = excerpts[i];
+        const articleHTML = document.createElement('article');
+        articleHTML.className = 'mb-5';
+        articleHTML.innerHTML = `
+          <h2>
+            <a href="${article.url}">${article.title}</a>
+          </h2>
+          <p class="text-muted">${article.meta}</p>
+          <p>${excerpt}</p>
+          <a href="${article.url}">Číst celý článek</a>
+        `;
+        articlesWrapper.appendChild(articleHTML);
+      });
+
+      showMoreBtn.style.display = 'none'; // hide button
+      showingAll = true;
+    }
+  });
+
   }
 }
 
