@@ -6,6 +6,7 @@ from pathlib import Path
 # Set your article variables here
 # =========================
 title = "Mandava Jazz 2026"
+meta = "Koncert" 
 description = "V říjnu jsem si zahráli na Mandava Jazzu a bylo to mega super"
 youtube_link = ""  # Leave empty if no video
 video_title = "Edith with the Stick #livemusic #concert"
@@ -55,6 +56,7 @@ html_template = Template("""<!DOCTYPE html>
             <div class="article-inner mx-auto" style="max-width: 700px;">
                 <header class="mb-4 text-center">
                     <h1 class="display-4 text-uppercase mb-3 animated slideInDown fw-bold">$title</h1>
+                    <p class="text-muted fs-5">$meta</p>
                     <hr class="my-4">
                 </header>
 
@@ -105,6 +107,7 @@ else:
 # =========================
 html_content = html_template.substitute(
     title=title,
+    meta=meta, 
     description=description,
     video_block=video_block
 )
@@ -130,7 +133,7 @@ else:
 new_article = {
     "url": f"/aktuality/{url_slug}/",
     "title": title,
-    "meta": ""
+    "meta": meta  # <-- use meta variable
 }
 articles.insert(0, new_article)
 
