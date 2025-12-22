@@ -7,42 +7,53 @@ async function loadArticles() {
 
   const container = document.getElementById('articles-list');
 
-  // create a wrapper div for articles
+  // wrapper for articles
   const articlesWrapper = document.createElement('div');
   articlesWrapper.id = 'articles-wrapper';
   container.appendChild(articlesWrapper);
 
   let showingAll = false;
 
+  // helper: add <hr> if wrapper already has content
+  function addDividerIfNeeded() {
+    if (articlesWrapper.children.length > 0) {
+      const hr = document.createElement('hr');
+      hr.className = 'my-4';
+      articlesWrapper.appendChild(hr);
+    }
+  }
+
   async function renderArticles(count) {
     articlesWrapper.innerHTML = '';
 
-    // Get excerpts for the first `count` articles
     const articlesToShow = articles.slice(0, count);
     const excerpts = await Promise.all(
       articlesToShow.map(article => loadExcerpt(article.url))
     );
 
-    // Append articles in order
     articlesToShow.forEach((article, i) => {
-      const excerpt = excerpts[i];
+      addDividerIfNeeded();
+
       const articleHTML = document.createElement('article');
       articleHTML.className = 'mb-5';
+
       articleHTML.innerHTML = `
         <h2>
           <a href="${article.url}">${article.title}</a>
         </h2>
         <p class="text-muted">${article.meta}</p>
-        <p>${excerpt}</p>
+        <p>${excerpts[i]}</p>
         <a href="${article.url}">Číst celý článek</a>
       `;
+
       articlesWrapper.appendChild(articleHTML);
     });
   }
 
-  renderArticles(INITIAL_COUNT);
+  // initial render
+  await renderArticles(INITIAL_COUNT);
 
-  // Only show "Show more" if there are more articles
+  // show more button
   if (articles.length > INITIAL_COUNT) {
     const showMoreBtn = document.createElement('button');
     showMoreBtn.textContent = 'Zobrazit více';
@@ -50,35 +61,36 @@ async function loadArticles() {
     container.appendChild(showMoreBtn);
 
     showMoreBtn.addEventListener('click', async () => {
-    if (!showingAll) {
-      // Get the number of currently displayed articles
-      const currentCount = articlesWrapper.children.length;
-      const articlesToAdd = articles.slice(currentCount, articles.length);
+      if (showingAll) return;
+
+      const currentCount = articlesWrapper.querySelectorAll('article').length;
+      const articlesToAdd = articles.slice(currentCount);
+
       const excerpts = await Promise.all(
         articlesToAdd.map(article => loadExcerpt(article.url))
       );
 
-      // Append only the new articles
       articlesToAdd.forEach((article, i) => {
-        const excerpt = excerpts[i];
+        addDividerIfNeeded();
+
         const articleHTML = document.createElement('article');
         articleHTML.className = 'mb-5';
+
         articleHTML.innerHTML = `
           <h2>
             <a href="${article.url}">${article.title}</a>
           </h2>
           <p class="text-muted">${article.meta}</p>
-          <p>${excerpt}</p>
+          <p>${excerpts[i]}</p>
           <a href="${article.url}">Číst celý článek</a>
         `;
+
         articlesWrapper.appendChild(articleHTML);
       });
 
-      showMoreBtn.style.display = 'none'; // hide button
+      showMoreBtn.style.display = 'none';
       showingAll = true;
-    }
-  });
-
+    });
   }
 }
 
