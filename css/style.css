@@ -460,16 +460,21 @@ a {
 }
 
 .article-page {
-    /* Push content below fixed navbar */
-    padding-top: 80px; /* adjust to match navbar height */
+    padding-top: 100px; /* offset for fixed navbar */
+}
+
+.article-page .article-inner {
+    max-width: 700px; /* limit line width for better readability */
+    margin: 0 auto;   /* center horizontally */
 }
 
 .article-page .article-content iframe {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 2rem auto; /* center and add spacing */
+    margin: 2rem auto; /* center video with spacing */
 }
+
 /*** Footer ***/
 /* @keyframes footerAnimatedBg {
 	0% {
