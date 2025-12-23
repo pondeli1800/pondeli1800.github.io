@@ -104,7 +104,7 @@ async function loadExcerpt(url) {
   if (!content) return '';
 
   // Remove any link pointing to "/" at the end
-  const backLink = content.querySelector('a[href="/"]');
+  const backLink = content.querySelector('a[href="/#aktuality"]');
   if (backLink) backLink.remove();
 
   const text = content.textContent.trim().replace(/\s+/g, ' ');

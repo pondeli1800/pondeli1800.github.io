@@ -5,12 +5,12 @@ from pathlib import Path
 # =========================
 # Set your article variables here
 # =========================
-title = "Mandava Jazz 2026"
-meta = "Koncert" 
-description = "V říjnu jsem si zahráli na Mandava Jazzu a bylo to mega super"
+title = "BLDSFLKJ2025 érwjuhesdfsrdfsdfsdfdf! 2026"
+meta = "Nahrávání" 
+description = "Je sdfsdfto mega badfdsfsdfengr jsme měli po roce a půlk oncerjsdfk aůlsdfjůlksjadasdefghjgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg\njsdkfjsdklfjsdfiwuerwppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppuuuuuuuuuuuuuuuuujsem si zahráli na Mandava Jazzu a bylo to mega super"
 youtube_link = ""  # Leave empty if no video
 video_title = "Edith with the Stick #livemusic #concert"
-url_slug = "mandava-jazz-2026"
+url_slug = "BLDSFLKJ2025"
 
 
 
@@ -67,7 +67,7 @@ html_template = Template("""<!DOCTYPE html>
                 <div class="article-content fs-5 lh-lg animated fadeInUp">
                     <p>$description</p>
                     $video_block
-                    <a href="/" class="d-block mt-4">Zpět na aktuality</a>
+                    <a href="/#aktuality" class="d-block mt-4">Zpět na aktuality</a>
                 </div>
             </div>
         </div>
