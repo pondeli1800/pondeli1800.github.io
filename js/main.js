@@ -51,6 +51,28 @@
         dotsData: true,
     });
 
-    
+    var counter = function () {
+        $('.counter').each(function () {
+            var $this = $(this),
+                target = parseInt($this.data('target')),
+                duration = 2000,
+                start = 0,
+                increment = Math.ceil(target / (duration / 16));
+
+            function updateCounter() {
+                start += increment;
+                if (start >= target) {
+                    $this.text(target);
+                } else {
+                    $this.text(start);
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+
+            updateCounter();
+        });
+    };
+
+    counter();
 })(jQuery);
 
