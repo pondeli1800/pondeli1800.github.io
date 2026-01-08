@@ -57,14 +57,15 @@
                 target = parseInt($this.data('target')),
                 duration = 2000,
                 start = 0,
-                increment = Math.ceil(target / (duration / 16));
+                increment = target / (duration / 16);
 
             function updateCounter() {
                 start += increment;
+                increment *= 0.993;
                 if (start >= target) {
                     $this.text(target);
                 } else {
-                    $this.text(start);
+                    $this.text(Math.ceil(start));
                     requestAnimationFrame(updateCounter);
                 }
             }
