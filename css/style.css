@@ -506,6 +506,19 @@ a {
 .testimonial-item > img.img-fluid {
     transform: scale(0.75);
 }
+.lightbox-gallery a {
+    display: inline-flex;
+    align-items: flex-start;   /* stick image to top */
+    justify-content: center;   /* optional: center horizontally */
+    width: 350px;
+    height: 350px;
+}
+
+.lightbox-gallery a img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 
 /*** Footer ***/
