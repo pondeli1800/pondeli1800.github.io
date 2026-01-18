@@ -488,24 +488,26 @@ a {
     height: 100%;
 }
 
-/*** Testimonial – responsive typography ***/
+/*** Testimonial – responsive typography (larger) ***/
 .testimonial-item p {
-    font-size: clamp(1rem, 1.1vw, 1.35rem);
-    line-height: 1.6;
+    font-size: clamp(1.1rem, 1.4vw, 1.7rem);
+    line-height: 1.7;
 }
 
 .testimonial-item h5 {
-    font-size: clamp(1.1rem, 1.3vw, 1.6rem);
-    margin-top: 1rem;
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
+    margin-top: 1.25rem;
 }
 
 .testimonial-item span {
-    font-size: clamp(0.9rem, 1vw, 1.2rem);
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
 }
-/*** Testimonial – spacing ***/
+
+/*** Testimonial – spacing (larger) ***/
 .testimonial-item img {
-    margin-bottom: clamp(1rem, 2vw, 2rem);
+    margin-bottom: clamp(1.5rem, 3vw, 3rem);
 }
+
 
 /*** Footer ***/
 /* @keyframes footerAnimatedBg {
