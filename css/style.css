@@ -503,9 +503,8 @@ a {
     font-size: clamp(1rem, 1.3vw, 1.4rem);
 }
 
-/*** Testimonial – spacing (larger) ***/
-.testimonial-item img {
-    margin-bottom: clamp(1.5rem, 3vw, 3rem);
+.testimonial-item > img.img-fluid {
+    transform: scale(0.8);
 }
 
 
