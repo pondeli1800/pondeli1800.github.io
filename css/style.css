@@ -521,6 +521,99 @@ a {
 }
 
 
+
+
+/* ===============================
+   Hide default Bandsintown text
+   =============================== */
+
+.bit-widget .bit-widget-header,
+.bit-widget .bit-events-title,
+.bit-widget .bit-no-dates,
+.bit-widget .bit-follow-text {
+  display: none !important;
+}
+
+/* ===============================
+   Custom Czech headings
+   =============================== */
+
+.bit-title-upcoming::before {
+  content: "Nadcházející koncerty";
+}
+
+.bit-title-past::before {
+  content: "Minulé koncerty";
+}
+
+.bit-title-upcoming,
+.bit-title-past {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+}
+
+/* ===============================
+   Replace “Track to get concert…”
+   =============================== */
+
+.bit-widget .bit-follow-container::before {
+  content: "Sledujte kapelu a získejte aktuální informace o koncertech, živých přenosech a turné.";
+  display: block;
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ===============================
+   Replace Tickets button text
+   =============================== */
+
+.bit-widget .bit-button {
+  font-size: 0; /* hide original English */
+}
+
+.bit-widget .bit-button::after {
+  content: "Vstupenky";
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   Replace Sold Out text
+   =============================== */
+
+.bit-widget .bit-sold-out {
+  font-size: 0;
+}
+
+.bit-widget .bit-sold-out::after {
+  content: "Vyprodáno";
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+/* ===============================
+   Replace “No Upcoming Tour Dates”
+   =============================== */
+
+.bit-widget .bit-no-dates::after {
+  content: "Nejsou naplánovány žádné nadcházející koncerty.";
+  display: block;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* ===============================
+   Minor Czech-friendly tweaks
+   =============================== */
+
+.bit-widget .bit-date {
+  text-transform: lowercase;
+}
+
+
 /*** Footer ***/
 /* @keyframes footerAnimatedBg {
 	0% {
