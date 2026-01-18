@@ -161,6 +161,46 @@
     <script src="/js/main.js"></script>
     <script src="/partials/includes.js"></script>
     <script src="/aktuality/article.js"></script>
+<script>
+(function() {
+  const TRANSLATIONS = {
+    "Track to get concert, live stream and tour updates.": "Sledujte kapelu a získejte aktuální informace o koncertech, živých přenosech a turné.",
+    "Upcoming Dates": "Nadcházející koncerty",
+    "Past Dates": "Minulé koncerty",
+    "No Upcoming Tour Dates": "Nejsou naplánovány žádné nadcházející koncerty."
+  };
+
+  // Recursively replace text nodes
+  function replaceText(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      Object.keys(TRANSLATIONS).forEach(key => {
+        if (node.nodeValue.includes(key)) {
+          node.nodeValue = node.nodeValue.replace(key, TRANSLATIONS[key]);
+        }
+      });
+    } else if (node.childNodes) {
+      node.childNodes.forEach(replaceText);
+    }
+  }
+
+  // Scan the widget repeatedly
+  function scanWidget() {
+    document.querySelectorAll(".bit-widget").forEach(replaceText);
+  }
+
+  // Observe the DOM for changes (handles async rendering)
+  const observer = new MutationObserver(scanWidget);
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Also schedule delayed runs to catch slow widget loads
+  setTimeout(scanWidget, 500);
+  setTimeout(scanWidget, 1500);
+  setTimeout(scanWidget, 3000);
+  setTimeout(scanWidget, 5000);
+})();
+</script>
+
+
 
 </body>
 
