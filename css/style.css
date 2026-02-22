@@ -628,33 +628,38 @@ a {
    Concert widget – reuse text types
    =============================== */
 
+/* ===============================
+   Concert widget – responsive text
+   =============================== */
+
 .concert-widget {
     font-family: inherit;
     max-width: 480px;
 }
 
-/* header with emoji */
+/* Header with emoji */
 .concert-widget .concert-header {
-    font-size: clamp(1.6rem, 2vw, 2.2rem); /* same as .testimonial-item h5 */
+    font-size: clamp(1.6rem, 2vw, 2.2rem); /* same as testimonial heading */
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
-/* place name */
+/* Concert name = hero-style font, responsive like page titles */
 .concert-widget .concert-place {
-    font-size: clamp(1.6rem, 2vw, 2.2rem); /* heading size */
-    font-weight: 600;
+    font-size: clamp(3rem, 6vw, 5rem); /* much bigger, responsive */
+    font-weight: 700;                   /* bold like titles */
+    line-height: 1.1;                   /* tighter for big headers */
     margin-bottom: 0.25rem;
 }
 
-/* meta info (city + date) */
+/* Meta info (city + date) */
 .concert-widget .concert-meta {
     font-size: clamp(1.1rem, 1.4vw, 1.7rem); /* paragraph size */
     line-height: 1.7;
     color: #cccccc;
 }
 
-/* tickets link */
+/* Tickets link */
 .concert-widget .concert-link {
     font-size: clamp(1rem, 1.3vw, 1.4rem); /* span size */
     font-weight: 600;
