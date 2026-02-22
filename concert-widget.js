@@ -1,5 +1,5 @@
-const BASE_PATH = ""; 
-// pokud je repo https://username.github.io/mojerepo/
+const BASE_PATH = "";
+// pokud máš repo např. https://username.github.io/mojerepo/
 // změň na: const BASE_PATH = "/mojerepo";
 
 fetch(`${BASE_PATH}/data/events.json`)
@@ -34,9 +34,9 @@ function renderConcerts(concerts) {
       <h2>🎶 Nadcházející koncerty</h2>
       ${concerts.map(c => `
         <div style="border-bottom:1px solid #ddd; padding:12px 0">
-          <strong>${c.title}</strong><br>
+          <strong>${c.venue.name}</strong><br>
           <small>
-            📍 ${c.venue.name}, ${c.venue.city}<br>
+            📍 ${c.venue.city}<br>
             📅 ${formatDate(c.starts_at)}
           </small><br>
           ${
