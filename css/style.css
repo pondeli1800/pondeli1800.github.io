@@ -537,7 +537,11 @@ a {
 .bit-widget .bit-widget-header,
 .bit-widget .bit-events-title,
 .bit-widget .bit-no-dates,
-.bit-widget .bit-follow-text {
+.bit-widget .bit-follow-text,
+.bit-widget-container .bit-track-button,
+.bit-widget-container .bit-no-dates-message,
+.bit-widget-container .bit-request-show 
+ {
   display: none !important;
 }
 
