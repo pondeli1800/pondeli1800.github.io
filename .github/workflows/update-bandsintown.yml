@@ -3,7 +3,7 @@ name: Update Bandsintown Events
 on:
   schedule:
     - cron: '0 * * * *' # runs every hour
-  workflow_dispatch:     # allows manual trigger
+  workflow_dispatch:
 
 jobs:
   fetch-events:
@@ -19,12 +19,14 @@ jobs:
         run: |
           curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" -o data/events.json
 
-      - name: Debug fetch
-        run: |
-          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" | head -n 20
-
       - name: Commit and push events
         run: |
+          # Set local Git identity for this repo only
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
           git add data/events.json
           git commit -m "Update Bandsintown events" || echo "No changes"
+
+          # Push using PAT
           git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
