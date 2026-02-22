@@ -459,22 +459,18 @@ a {
     gap: 12px;
 }
 
-/* Square items */
 .lightbox-gallery a {
-    position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;   /* perfect square */
+    aspect-ratio: 1 / 1;   /* square */
     overflow: hidden;
     border-radius: 8px;
 }
 
-/* Images fill the square */
 .lightbox-gallery a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.35s ease;
 }
 
 /* Optional hover effect */
