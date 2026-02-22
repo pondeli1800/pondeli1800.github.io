@@ -5,9 +5,9 @@ from pathlib import Path
 # =========================
 # Set your article variables here
 # =========================
-title = "BLDSFLKJ2025 érwjuhesdfsrdfsdfsdfdf! 2026"
+title = ""
 meta = "Nahrávání" 
-description = "Je sdfsdfto mega badfdsfsdfengr jsme měli po roce a půlk oncerjsdfk aůlsdfjůlksjadasdefghjgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg\njsdkfjsdklfjsdfiwuerwppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppuuuuuuuuuuuuuuuuujsem si zahráli na Mandava Jazzu a bylo to mega super"
+description = ""
 youtube_link = ""  # Leave empty if no video
 video_title = "Edith with the Stick #livemusic #concert"
 url_slug = "BLDSFLKJ2025"
