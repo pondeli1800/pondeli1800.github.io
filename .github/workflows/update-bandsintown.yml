@@ -29,4 +29,4 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json
           git commit -m "Update Bandsintown events" || echo "No changes"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:gh-pages
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
