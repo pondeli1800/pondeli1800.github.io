@@ -644,12 +644,12 @@ a {
     margin-bottom: 1rem;
 }
 
-/* Concert name = hero-style font, responsive like page titles */
-.concert-widget .concert-place {
-    font-size: clamp(3rem, 6vw, 5rem); /* much bigger, responsive */
-    font-weight: 700;                   /* bold like titles */
-    line-height: 1.1;                   /* tighter for big headers */
-    margin-bottom: 0.25rem;
+/* Concert name = hero-style, really big and responsive */
+.concert-widget .concert-item .concert-place {
+    font-size: clamp(3rem, 8vw, 6rem) !important; /* bigger and responsive */
+    font-weight: 700 !important;                  /* bold like titles */
+    line-height: 1.1 !important;                  /* tighter for hero look */
+    margin-bottom: 0.25rem !important;
 }
 
 /* Meta info (city + date) */
