@@ -14,7 +14,9 @@ jobs:
 
       - name: Fetch events from Bandsintown
         run: |
+          mkdir -p data
           curl -s "https://rest.bandsintown.com/artists/Pondel%C3%AD%2018:00/events?app_id=${{ secrets.BANDSINTOWN }}" -o data/events.json
+          
       - name: Debug fetch
         run: |
           curl -s "https://rest.bandsintown.com/artists/Pondel%C3%AD%2018:00/events?app_id=${{ secrets.BANDSINTOWN }}" | head -n 20
