@@ -2,48 +2,25 @@ name: Update Bandsintown Events
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour
-  workflow_dispatch: # Allows manual trigger
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   fetch-events:
     runs-on: ubuntu-latest
-    concurrency:            # Prevent overlapping runs
-      group: "update-bandsintown-events"
-      cancel-in-progress: true
-
     steps:
-      # 1. Checkout the repository
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
 
-      # 2. Create a folder for data
-      - name: Create data folder
-        run: mkdir -p data
+      - run: mkdir -p data
 
-      # 3. Fetch events from Bandsintown API
-      - name: Fetch events from Bandsintown
-        run: |
+      - run: |
           curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" -o data/events.json
-          echo "Fetched events:"
-          cat data/events.json
 
-      # 4. Commit and push only if there are changes
-      - name: Commit and push events
-        run: |
+      - run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
           git add data/events.json
+          git commit -m "Update Bandsintown events" || echo "No changes"
 
-          # Only commit if the file changed
-          if ! git diff --cached --quiet; then
-            git commit -m "Update Bandsintown events"
-            git push origin HEAD:main
-          else
-            echo "No changes to commit"
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/pondeli1800/pondeli1800.github.io.git HEAD:main
