@@ -453,26 +453,34 @@ a {
     opacity: 1;
 }
 
-.lightbox-gallery img {
-  width: 350px;
-  margin: 5px;
-  border-radius: 8px;
+.lightbox-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
 }
+
+/* Square items */
 .lightbox-gallery a {
-    display: inline-block;
-    width: 350px;
-    aspect-ratio: 1 / 1;     /* makes the preview square */
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* perfect square */
     overflow: hidden;
     border-radius: 8px;
 }
 
+/* Images fill the square */
 .lightbox-gallery a img {
     width: 100%;
     height: 100%;
-    object-fit: cover;       /* fills the square, crops excess */
+    object-fit: cover;
     display: block;
+    transition: transform 0.35s ease;
 }
 
+/* Optional hover effect */
+.lightbox-gallery a:hover img {
+    transform: scale(1.08);
+}
 .article-page {
     padding-top: 100px; /* offset for fixed navbar */
 }
