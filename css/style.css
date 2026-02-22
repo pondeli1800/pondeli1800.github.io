@@ -456,7 +456,7 @@ a {
 .lightbox-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    gap: 2px;
     max-width: calc(6 * 1fr); /* explained below */
 }
 
