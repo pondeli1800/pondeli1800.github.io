@@ -1,0 +1,26 @@
+name: Update Bandsintown Events
+
+on:
+  schedule:
+    - cron: '0 * * * *' # runs every hour
+  workflow_dispatch:     # manual trigger
+
+jobs:
+  fetch-events:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch events from Bandsintown
+        run: |
+          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" \
+          -o data/events.json
+
+      - name: Commit events
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/events.json
+          git commit -m "Update Bandsintown events" || echo "No changes"
+          git push
