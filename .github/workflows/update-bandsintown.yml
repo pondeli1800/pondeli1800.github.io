@@ -29,4 +29,4 @@ jobs:
           git commit -m "Update Bandsintown events" || echo "No changes"
 
           # Push using PAT
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/pondeli1800/pondeli1800.github.io.git HEAD:main
