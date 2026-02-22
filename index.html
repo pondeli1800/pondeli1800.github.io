@@ -133,19 +133,16 @@
     <!-- Introduction End -->
 
     <main class="container my-5">
-    <div id="events-container"></div>
+<a class="bit-widget-initializer"
+   data-artist-name="YOUR ARTIST NAME"
+   data-display-local-dates="true"
+   data-language="cs"
+   data-display-past-dates="false"
+   data-auto-style="true">
+</a>
 
-    <script>
-fetch('data/events.json')
-  .then(res => res.json())
-  .then(events => {
-    console.log(events);
-    // Render events on your page
-  });
-</script>
+<script src="https://widget.bandsintown.com/main.min.js"></script>
     </main>
-
-
     <!-- Footer Start -->
     <div id="site-footer"></div>
     <!-- Footer End -->
