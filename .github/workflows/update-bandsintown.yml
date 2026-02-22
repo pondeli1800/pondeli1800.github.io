@@ -3,12 +3,6 @@ name: Update Bandsintown Events
 on:
   schedule:
     - cron: '0 * * * *' # runs every hour
-  workflow_dispatch:     # manual trigger
-name: Update Bandsintown Events
-
-on:
-  schedule:
-    - cron: '0 * * * *' # runs every hour
   workflow_dispatch:     # allows manual trigger
 
 jobs:
