@@ -16,7 +16,9 @@ jobs:
         run: |
           curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" \
           -o data/events.json
-
+      - name: Debug fetch
+        run: |
+          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" | head -n 20
       - name: Commit events
         run: |
           git config --global user.name "github-actions[bot]"
