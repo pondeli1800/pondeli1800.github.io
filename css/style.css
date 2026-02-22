@@ -481,6 +481,8 @@ a {
 .lightbox-gallery a:hover img {
     transform: scale(1.08);
 }
+
+
 .article-page {
     padding-top: 100px; /* offset for fixed navbar */
 }
