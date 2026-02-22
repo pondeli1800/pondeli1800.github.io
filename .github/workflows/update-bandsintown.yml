@@ -10,11 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false   # 🔥 THIS IS THE FIX
 
       - run: mkdir -p data
 
       - run: |
-          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" -o data/events.json
+          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" \
+          -o data/events.json
 
       - run: |
           git config user.name "GitHub Actions"
