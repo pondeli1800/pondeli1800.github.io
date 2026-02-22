@@ -624,6 +624,39 @@ a {
   text-transform: lowercase;
 }
 
+/* ===============================
+   Concert widget – reuse existing text types
+   =============================== */
+
+.concert-widget {
+    font-family: inherit; /* same as rest of site */
+    max-width: 480px;
+}
+
+.concert-widget .concert-place {
+    /* reuse testimonial heading size */
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.concert-widget .concert-meta {
+    /* reuse testimonial paragraph size */
+    font-size: clamp(1.1rem, 1.4vw, 1.7rem);
+    line-height: 1.7;
+    color: #cccccc;
+}
+
+.concert-widget .concert-link {
+    /* reuse testimonial span size */
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 0.4rem;
+    color: var(--bs-primary);
+    text-decoration: none;
+}
+
 
 /*** Footer ***/
 /* @keyframes footerAnimatedBg {
