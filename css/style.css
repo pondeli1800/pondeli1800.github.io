@@ -455,8 +455,10 @@ a {
 
 .lightbox-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0;
+    max-width: calc(5 * 200px);
+    margin: 0 auto; /* center on large screens */
 }
 
 .lightbox-gallery a {
