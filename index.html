@@ -136,31 +136,13 @@
     <div id="events-container"></div>
 
     <script>
-        // Fetch the pre-fetched events JSON
-        fetch('data/events.json')
-        .then(res => res.json())
-        .then(events => {
-            const container = document.getElementById('events-container');
-            if (!events || events.length === 0) {
-            container.innerHTML = '<p>Nejsou naplánovány žádné nadcházející koncerty.</p>';
-            return;
-            }
-
-            const html = events.map(event => `
-            <div class="event card mb-3 p-3 bg-dark text-white">
-                <h3 class="mb-1">${event.venue.name}, ${event.venue.city}</h3>
-                <p class="mb-1">${new Date(event.datetime).toLocaleDateString()} ${new Date(event.datetime).toLocaleTimeString()}</p>
-                <a href="${event.url}" target="_blank" class="btn btn-outline-light btn-sm mt-1">Více info</a>
-            </div>
-            `).join('');
-
-            container.innerHTML = html;
-        })
-        .catch(err => {
-            console.error('Chyba při načítání koncertů:', err);
-            document.getElementById('events-container').innerHTML = '<p>Koncerty nelze načíst.</p>';
-        });
-    </script>
+fetch('data/events.json')
+  .then(res => res.json())
+  .then(events => {
+    console.log(events);
+    // Render events on your page
+  });
+</script>
     </main>
 
 
