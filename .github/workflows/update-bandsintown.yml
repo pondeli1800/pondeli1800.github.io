@@ -16,7 +16,7 @@ jobs:
       - run: mkdir -p data
 
       - run: |
-          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?app_id=${{ secrets.BANDSINTOWN }}" \
+          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?date=all&app_id=${{ secrets.BANDSINTOWN }}" \
           -o data/events.json
 
       - run: |
