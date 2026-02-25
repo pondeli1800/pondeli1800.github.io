@@ -27,7 +27,7 @@ html_template = Template("""<!DOCTYPE html>
     <title>Pondělí 18:00 - $title</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <link href="/favicon.ico" rel="icon">
+    <link href="/favicon.png" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
