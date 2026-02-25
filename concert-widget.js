@@ -31,7 +31,7 @@ function renderConcerts(concerts) {
 
   el.innerHTML = `
     <div>
-      <h2 class="concert-header">🎶 Nadcházející koncerty</h2>
+      <h2 class="concert-header">Nadcházející koncerty</h2>
       ${concerts.map(c => `
         <div class="concert-item" style="border-bottom:1px solid #ddd; padding:12px 0">
           <div class="concert-place">${c.venue.name}</div>
