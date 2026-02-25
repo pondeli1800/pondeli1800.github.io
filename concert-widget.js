@@ -1,49 +1,40 @@
 const BASE_PATH = "";
-// if your repo is e.g., https://username.github.io/mojerepo/
-// use: const BASE_PATH = "/mojerepo";
+
+let upcomingConcerts = [];
+let pastConcerts = [];
+let showingPast = false;
 
 fetch(`${BASE_PATH}/data/events.json`)
   .then(r => {
     if (!r.ok) throw new Error("events.json nenalezen");
     return r.json();
   })
-  .then(renderConcerts)
+  .then(events => {
+    const now = new Date();
+
+    upcomingConcerts = events.filter(e => new Date(e.starts_at) > now);
+    pastConcerts = events.filter(e => new Date(e.starts_at) <= now);
+
+    renderConcerts(upcomingConcerts, "Nadcházející koncerty");
+
+    document
+      .getElementById("toggle-past")
+      .addEventListener("click", toggleConcerts);
+  })
   .catch(err => {
     document.getElementById("concert-widget").innerHTML =
       "<p class='concert-meta'>Nepodařilo se načíst koncerty.</p>";
     console.error(err);
   });
 
-function formatDate(dateStr) {
-  return new Date(dateStr).toLocaleString("cs-CZ", {
-    dateStyle: "long",
-    timeStyle: "short"
-  });
-}
+function toggleConcerts() {
+  showingPast = !showingPast;
 
-function renderConcerts(concerts) {
-  const el = document.getElementById("concert-widget");
-
-  if (!Array.isArray(concerts) || concerts.length === 0) {
-    el.innerHTML = "<p class='concert-meta'>Nejsou naplánovány žádné nadcházející koncerty.</p>";
-    return;
+  if (showingPast) {
+    renderConcerts(pastConcerts, "Předchozí koncerty");
+    this.textContent = "Zpět na nadcházející";
+  } else {
+    renderConcerts(upcomingConcerts, "Nadcházející koncerty");
+    this.textContent = "Předchozí koncerty";
   }
-
-  el.innerHTML = `
-    <div>
-      <h2 class="concert-header">Nadcházející koncerty</h2>
-      ${concerts.map(c => `
-        <div class="concert-item" style="border-bottom:1px solid #ddd; padding:12px 0">
-          <div class="concert-place">${c.venue.name}</div>
-          <div class="concert-meta">
-            📍 ${c.venue.city}<br>
-            📅 ${formatDate(c.starts_at)}
-          </div>
-          <a class="concert-link" href="${
-            c.offers?.length ? c.offers[0].url : c.url
-          }" target="_blank">🎟 Vstupenky</a>
-        </div>
-      `).join("")}
-    </div>
-  `;
 }
