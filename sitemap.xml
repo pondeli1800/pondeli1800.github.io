@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://pondeli18-00.cz/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Subpages -->
+  <url>
+    <loc>https://pondeli18-00.cz/fotogalerie/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pondeli18-00.cz/hudba/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pondeli18-00.cz/koncerty/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pondeli18-00.cz/kontakt/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pondeli18-00.cz/o_nas/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pondeli18-00.cz/jak_nas_podporit/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pondeli18-00.cz/socialni_site/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pondeli18-00.cz/video/</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 404 Page -->
+  <url>
+    <loc>https://pondeli18-00.cz/404.html</loc>
+    <priority>0.1</priority>
+  </url>
+
+</urlset>
