@@ -57,11 +57,17 @@ function renderConcerts(concerts, title) {
         const date = getEventDate(c);
         return `
           <div class="concert-item" style="border-bottom:1px solid #ddd; padding:12px 0">
-            <div class="concert-place">${c.venue?.name ?? ""}</div>
-            <div class="concert-meta">
-              📍 ${c.venue?.city ?? ""}<br>
-              📅 ${date ? formatDate(date) : "Datum není k dispozici"}
-            </div>
+            <div class="concert-place">
+            ${c.venue?.name ?? "Neznámé místo"}
+          </div>
+          <div class="concert-meta">
+            📍 ${[
+              c.venue?.street_address,
+              c.venue?.city,
+              c.venue?.country
+            ].filter(Boolean).join(", ")}<br>
+            📅 ${date ? formatDate(date) : "Datum není k dispozici"}
+          </div>
             ${
               title === "Nadcházející koncerty"
                 ? `<a class="concert-link" href="${
