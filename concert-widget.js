@@ -55,26 +55,36 @@ function renderConcerts(concerts, title) {
       <h2 class="concert-header">${title}</h2>
       ${concerts.map(c => {
         const date = getEventDate(c);
+        const hasTickets = Array.isArray(c.offers) && c.offers.length > 0;
+
+        const buttonHtml =
+          title === "Nadcházející koncerty"
+            ? `
+              <a class="concert-link"
+                 href="${hasTickets ? c.offers[0].url : c.url}"
+                 target="_blank"
+                 rel="noopener">
+                ${hasTickets ? "🎟 Vstupenky" : "ℹ️ Více informací"}
+              </a>
+            `
+            : "";
+
         return `
           <div class="concert-item" style="border-bottom:1px solid #ddd; padding:12px 0">
             <div class="concert-place">
-            ${c.venue?.name ?? "Neznámé místo"}
-          </div>
-          <div class="concert-meta">
-            📍 ${[
-              c.venue?.street_address,
-              c.venue?.city,
-              c.venue?.country
-            ].filter(Boolean).join(", ")}<br>
-            📅 ${date ? formatDate(date) : "Datum není k dispozici"}
-          </div>
-            ${
-              title === "Nadcházející koncerty"
-                ? `<a class="concert-link" href="${
-                    c.offers?.length ? c.offers[0].url : c.url
-                  }" target="_blank" rel="noopener">🎟 Vstupenky</a>`
-                : ""
-            }
+              ${c.venue?.name ?? "Neznámé místo"}
+            </div>
+
+            <div class="concert-meta">
+              📍 ${[
+                c.venue?.street_address,
+                c.venue?.city,
+                c.venue?.country
+              ].filter(Boolean).join(", ")}<br>
+              📅 ${date ? formatDate(date) : "Datum není k dispozici"}
+            </div>
+
+            ${buttonHtml}
           </div>
         `;
       }).join("")}
