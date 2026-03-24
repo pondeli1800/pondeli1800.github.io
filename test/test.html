@@ -85,35 +85,30 @@
 
                 <!-- Custom Form -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <h4 class="lh-base mb-4">Chcete nás na vaší akci?</h4>
+                <h4 class="lh-base mb-4">Chcete nás na vaší akci?</h4>
 
                 <form id="contact-form" action="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec" method="POST" target="hidden_iframe" class="row g-3">
-                    <!-- Email -->
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                        <input type="email" class="form-control bg-secondary border-0" name="email" placeholder="Váš email" required>
-                        <label>Váš email</label>
-                        </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                    <input type="email" class="form-control bg-secondary border-0" name="email" placeholder="Váš email" required>
+                    <label>Váš email</label>
                     </div>
+                </div>
 
-                    <!-- Message -->
-                    <div class="col-12">
-                        <div class="form-floating">
-                        <textarea class="form-control bg-secondary border-0" name="message" placeholder="Váš vzkaz" style="height:150px" required></textarea>
-                        <label>Váš vzkaz</label>
-                        </div>
+                <div class="col-12">
+                    <div class="form-floating">
+                    <textarea class="form-control bg-secondary border-0" name="message" placeholder="Váš vzkaz" style="height:150px" required></textarea>
+                    <label>Váš vzkaz</label>
                     </div>
+                </div>
 
-                    <!-- Honeypot -->
-                    <input type="text" name="website" style="display:none">
+                <input type="text" name="website" style="display:none">
 
-                    <!-- Submit -->
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-outline-primary border-2 w-100 py-3">Poslat</button>
-                    </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-outline-primary border-2 w-100 py-3">Poslat</button>
+                </div>
 
-                    <!-- Feedback -->
-                    <div class="col-12" id="form-feedback" style="color:#0eefff; font-weight:600;"></div>
+                <div class="col-12" id="form-feedback" style="color:#0eefff; font-weight:600;"></div>
                 </form>
 
                 <iframe name="hidden_iframe" style="display:none;"></iframe>
@@ -141,6 +136,6 @@
     <!-- Template JS -->
     <script src="/js/main.js"></script>
     <script src="/partials/includes.js"></script>
-    <!-- <script src="/js/form.js"></script> -->
+    <script src="/js/form.js"></script>
 </body>
 </html>
