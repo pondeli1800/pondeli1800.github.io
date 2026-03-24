@@ -13,8 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
     <!-- Icon Fonts -->
@@ -45,7 +44,8 @@
         <div class="page-header pb-5">
             <div class="container text-center py-5">
                 <h1 class="display-4 text-uppercase mb-3 animated slideInDown">Ozvěte se nám</h1>
-                Chcete nás na vašem festivalu, maturáku nebo koncertě? Líbí se vám něco od nás? Nebo nám chcete cokoliv sdělit? Ozvěte se nám!
+                Chcete nás na vašem festivalu, maturáku nebo koncertě? Líbí se vám něco od nás? Nebo nám chcete cokoliv
+                sdělit? Ozvěte se nám!
             </div>
         </div>
     </div>
@@ -85,33 +85,35 @@
 
                 <!-- Custom Form -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                <h4 class="lh-base mb-4">Chcete nás na vaší akci?</h4>
+                    <h4 class="lh-base mb-4">Chcete nás na vaší akci?</h4>
 
-                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbzot1ZEPWTXLatMMqZB93oTaKeIYS0zZ9vMBlywLY3-vrJl7rITU51EwxEGkX2j6ufBGg/exec" method="POST" target="hidden_iframe" class="row g-3">
-                <div class="col-md-6">
-                    <div class="form-floating">
-                    <input type="email" class="form-control bg-secondary border-0" name="email" placeholder="Váš email" required>
-                    <label>Váš email</label>
-                    </div>
-                </div>
+                    <form id="contact-form" action="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec" method="POST"
+                        class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control bg-secondary border-0" name="email"
+                                    placeholder="Váš email" required>
+                                <label>Váš email</label>
+                            </div>
+                        </div>
 
-                <div class="col-12">
-                    <div class="form-floating">
-                    <textarea class="form-control bg-secondary border-0" name="message" placeholder="Váš vzkaz" style="height:150px" required></textarea>
-                    <label>Váš vzkaz</label>
-                    </div>
-                </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control bg-secondary border-0" name="message"
+                                    placeholder="Váš vzkaz" style="height:150px" required></textarea>
+                                <label>Váš vzkaz</label>
+                            </div>
+                        </div>
 
-                <input type="text" name="website" style="display:none">
+                        <!-- Honeypot -->
+                        <input type="text" name="website" style="display:none">
 
-                <div class="col-12">
-                    <button type="submit" class="btn btn-outline-primary border-2 w-100 py-3">Poslat</button>
-                </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-outline-primary border-2 w-100 py-3">Poslat</button>
+                        </div>
 
-                <div class="col-12" id="form-feedback" style="color:#0eefff; font-weight:600;"></div>
-                </form>
-
-                <iframe name="hidden_iframe" style="display:none;"></iframe>
+                        <div class="col-12" id="form-feedback" style="color:#0eefff; font-weight:600;"></div>
+                    </form>
                 </div>
 
             </div>
