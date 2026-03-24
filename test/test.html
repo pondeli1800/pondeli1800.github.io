@@ -141,36 +141,6 @@
     <!-- Template JS -->
     <script src="/js/main.js"></script>
     <script src="/partials/includes.js"></script>
-
-    <!-- Custom JS for GitHub Actions Email -->
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const data = new FormData(form);
-
-            // Simple honeypot check
-            if (data.get('website')) return;
-
-            const response = await fetch('https://api.github.com/repos/YOUR_USER/YOUR_REPO/dispatches', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': 'token YOUR_GITHUB_TOKEN',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    event_type: 'contact-form',
-                    client_payload: Object.fromEntries(data)
-                })
-            });
-
-            const feedback = document.getElementById('form-feedback');
-            if (response.ok) feedback.textContent = "Vzkaz odeslán!";
-            else feedback.textContent = "Chyba při odesílání.";
-            form.reset();
-        });
-    </script>
-
+    <script src="/js/form.js"></script>
 </body>
 </html>
