@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // When the iframe loads after form submission
   iframe.addEventListener("load", () => {
     // Show success message
-    feedback.textContent = "Zpráva poslána!";
+    feedback.textContent = "Zpráva se nemusela poslat! Případně použijte email uvedený v kontaktech";
     feedback.style.color = "#0eefff";
 
     // Clear the form inputs
