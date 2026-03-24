@@ -87,36 +87,14 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <h4 class="lh-base mb-4">Chcete nás na vaší akci?</h4>
 
-                    <form id="contact-form" class="row g-3">
-                        <!-- Email -->
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control bg-secondary border-0" name="email"
-                                    placeholder="Váš email" required>
-                                <label>Váš email</label>
-                            </div>
-                        </div>
+                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbzot1ZEPWTXLatMMqZB93oTaKeIYS0zZ9vMBlywLY3-vrJl7rITU51EwxEGkX2j6ufBGg/exec" method="POST" target="hidden_iframe">
+                <input type="email" name="email" required>
+                <textarea name="message" required></textarea>
+                <input type="text" name="website" style="display:none">
+                <button type="submit">Poslat</button>
+                </form>
 
-                        <!-- Message -->
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control bg-secondary border-0" name="message"
-                                    placeholder="Váš vzkaz" style="height:150px" required></textarea>
-                                <label>Váš vzkaz</label>
-                            </div>
-                        </div>
-
-                        <!-- Honeypot for spam -->
-                        <input type="text" name="website" style="display:none">
-
-                        <!-- Submit -->
-                        <div class="col-12">
-                            <button class="btn btn-outline-primary border-2 w-100 py-3" type="submit">Poslat</button>
-                        </div>
-
-                        <!-- Feedback -->
-                        <div class="col-12" id="form-feedback" style="color:#0eefff; font-weight:600;"></div>
-                    </form>
+                <iframe name="hidden_iframe" style="display:none;"></iframe>
                 </div>
 
             </div>
