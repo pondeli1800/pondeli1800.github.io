@@ -1,23 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
   const feedback = document.getElementById("form-feedback");
-  const iframe = document.querySelector("iframe[name='hidden_iframe']");
 
-  // Listen for iframe load (form submitted)
-  iframe.addEventListener("load", function() {
-    if (!form) return;
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
 
-    // Optional: reset the form fields
-    form.reset();
+    // Honeypot check
+    if (formData.get("website")) return;
 
-    // Hide the form and show success message
-    form.style.display = "none";
-    feedback.textContent = "Zpráva poslána!";
-    feedback.style.color = "#0eefff";
-  });
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      });
 
-  // Clear feedback if user edits the form again
-  form.addEventListener("input", () => {
-    feedback.textContent = "";
+      const text = await response.text();
+
+      if (text === "success") {
+        form.style.display = "none";
+        feedback.textContent = "Zpráva poslána!";
+        feedback.style.color = "#0eefff";
+      } else if (text === "spam") {
+        feedback.textContent = "Spam detekován, zpráva nebyla odeslána.";
+        feedback.style.color = "#ff5555";
+      } else {
+        feedback.textContent = "Objevil se problém, zkuste prosím jiný prohlížeč nebo použijte uvedený email.";
+        feedback.style.color = "#ff5555";
+      }
+    } catch (err) {
+      feedback.textContent = "Objevil se problém, zkuste prosím jiný prohlížeč nebo použijte uvedený email.";
+      feedback.style.color = "#ff5555";
+      console.error(err);
+    }
   });
 });
