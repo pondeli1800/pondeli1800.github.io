@@ -21,7 +21,7 @@ output_file = f"aktuality/{url_slug}/index.html"
 # HTML template (iframe optional)
 # =========================
 html_template = Template("""<!DOCTYPE html>
-<html lang="en">
+<html lang="cz">
 <head>
     <meta charset="utf-8">
     <title>Pondělí 18:00 - $title</title>
