@@ -1,6 +1,6 @@
 // ====== CONFIG ======
 const BASE_PATH = ""; 
-const PAST_CONCERTS_OFFSET = 31; // number of older shows not in Bandsintown plus private shows
+const PAST_CONCERTS_OFFSET = 32; // number of older shows not in Bandsintown plus private shows
 
 // ====== STATE ======
 let upcomingConcerts = [];
