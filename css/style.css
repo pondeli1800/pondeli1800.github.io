@@ -670,6 +670,22 @@ a {
 }
 
 
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.language-switch .nav-link {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.language-switch span:not(.nav-link) {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
 /*** Footer ***/
 /* @keyframes footerAnimatedBg {
 	0% {
