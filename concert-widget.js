@@ -11,7 +11,7 @@ const TEXT = {
     cs: {
         upcoming: "Nadcházející koncerty",
         past: "Předchozí koncerty",
-        tickets: "🎟 Vstupenky",
+        tickets: "Vstupenky",
         moreInfo: "ℹ️ Více informací",
         unknownVenue: "Neznámé místo",
         noDate: "Datum není k dispozici",
@@ -24,7 +24,7 @@ const TEXT = {
     en: {
         upcoming: "Upcoming concerts",
         past: "Past concerts",
-        tickets: "🎟 Tickets",
+        tickets: "Tickets",
         moreInfo: "ℹ️ More information",
         unknownVenue: "Unknown venue",
         noDate: "Date unavailable",
