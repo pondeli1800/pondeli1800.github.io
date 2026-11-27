@@ -1,3 +1,4 @@
+
 name: Update Bandsintown Events
 
 on:
@@ -8,22 +9,86 @@ on:
 jobs:
   fetch-events:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          persist-credentials: false   # 🔥 THIS IS THE FIX
+          persist-credentials: false
 
-      - run: mkdir -p data
+      - name: Create data directory
+        run: mkdir -p data
 
-      - run: |
-          curl -s "https://rest.bandsintown.com/artists/id_15590844/events?date=all&app_id=${{ secrets.BANDSINTOWN }}" \
-          -o data/events.json
+      - name: Fetch events from Bandsintown
+        run: |
+          curl -fSs \
+            "https://rest.bandsintown.com/artists/id_15590844/events?date=all&app_id=${{ secrets.BANDSINTOWN }}" \
+            -o /tmp/new-events.json
 
-      - run: |
+          python3 -c "import json; d=json.load(open('/tmp/new-events.json')); assert isinstance(d,list), 'API response is not a list'; print('Fetched',len(d),'events')"
+
+      - name: Merge events and preserve history
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+
+          existing_file = "data/events.json"
+          new_file = "/tmp/new-events.json"
+
+          if os.path.exists(existing_file):
+              with open(existing_file, encoding="utf-8") as f:
+                  old_events = json.load(f)
+          else:
+              old_events = []
+
+          with open(new_file, encoding="utf-8") as f:
+              new_events = json.load(f)
+
+          if not isinstance(old_events, list):
+              raise ValueError("Existing events.json is not a list")
+
+          if not isinstance(new_events, list):
+              raise ValueError("New API response is not a list")
+
+          merged = {}
+
+          def event_key(event):
+              event_id = event.get("id")
+              if event_id:
+                  return "id:" + str(event_id)
+
+              return "fallback:" + str(
+                  event.get("url", "")
+              ) + "|" + str(
+                  event.get("starts_at") or event.get("datetime") or ""
+              )
+
+          # Keep all historical events already stored.
+          for event in old_events:
+              merged[event_key(event)] = event
+
+          # Update existing events and add newly fetched events.
+          for event in new_events:
+              merged[event_key(event)] = event
+
+          events = list(merged.values())
+
+          with open(existing_file, "w", encoding="utf-8") as f:
+              json.dump(events, f, ensure_ascii=False, indent=2)
+
+          print(f"Previously saved: {len(old_events)}")
+          print(f"Fetched from API: {len(new_events)}")
+          print(f"Total after merge: {len(events)}")
+          PY
+
+      - name: Commit and push changes
+        run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
           git add data/events.json
           git commit -m "Update Bandsintown events" || echo "No changes"
 
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/pondeli1800/pondeli1800.github.io.git HEAD:main
+          git push \
+            https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/pondeli1800/pondeli1800.github.io.git \
+            HEAD:main
