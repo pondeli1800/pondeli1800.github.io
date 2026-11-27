@@ -78,26 +78,23 @@ function escapeHtml(value) {
 
 
 function animateCounter(el) {
-    const target = Math.max(0, parseInt(el.dataset.target) || 0);
-    const duration = 2000;
-    const startTime = performance.now();
+  const target = parseInt(el.dataset.target) || 0;
+  let start = 0;
+  const duration = 2000;
+  let increment = target / (duration / 16);
 
-    function update(currentTime) {
-        const progress = Math.min(
-            (currentTime - startTime) / duration,
-            1
-        );
-
-        el.textContent = Math.floor(progress * target);
-
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        } else {
-            el.textContent = target;
-        }
+  function update() {
+    start += increment;
+    increment *= 0.993;
+    if (start >= target) {
+      el.textContent = target;
+    } else {
+      el.textContent = Math.ceil(start);
+      requestAnimationFrame(update);
     }
+  }
 
-    requestAnimationFrame(update);
+  update();
 }
 
 
