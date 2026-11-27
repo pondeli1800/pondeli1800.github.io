@@ -229,12 +229,12 @@
           "url": "https://open.spotify.com/artist/6xrIkbgOW7H5TlZ9T7Iuel"
         },
         {
-          "type": "itunes",
-          "url": "https://music.apple.com/us/artist/1811039645"
-        },
-        {
           "type": "instagram",
           "url": "https://www.instagram.com/pondeli_18_00/"
+        },
+        {
+          "type": "itunes",
+          "url": "https://music.apple.com/us/artist/1811039645"
         },
         {
           "type": "facebook",
@@ -885,12 +885,12 @@
           "url": "https://open.spotify.com/artist/6xrIkbgOW7H5TlZ9T7Iuel"
         },
         {
-          "type": "itunes",
-          "url": "https://music.apple.com/us/artist/1811039645"
-        },
-        {
           "type": "instagram",
           "url": "https://www.instagram.com/pondeli_18_00/"
+        },
+        {
+          "type": "itunes",
+          "url": "https://music.apple.com/us/artist/1811039645"
         },
         {
           "type": "facebook",
