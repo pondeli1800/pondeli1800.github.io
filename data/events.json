@@ -292,6 +292,50 @@
     }
   },
   {
+    "artist": {
+      "artist_optin_show_phone_number": false,
+      "facebook_page_url": "",
+      "id": "15590844",
+      "image_url": "https://photos.bandsintown.com/large/24393107.jpeg",
+      "links": [
+        {
+          "type": "website",
+          "url": "https://pondeli18-00.cz"
+        },
+        {
+          "type": "spotify",
+          "url": "https://open.spotify.com/artist/6xrIkbgOW7H5TlZ9T7Iuel"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/pondeli_18_00/"
+        },
+        {
+          "type": "itunes",
+          "url": "https://music.apple.com/us/artist/1811039645"
+        },
+        {
+          "type": "facebook",
+          "url": "https://www.facebook.com/pondeli18.00"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC7hlq-qY-BP0sDxEM0HveSw"
+        }
+      ],
+      "mbid": "",
+      "name": "Pondělí 18:00",
+      "options": {
+        "display_listen_unit": false
+      },
+      "show_multi_ticket": true,
+      "support_url": "",
+      "thumb_url": "https://photos.bandsintown.com/thumb/24393107.jpeg",
+      "tracker_count": 7,
+      "tracking": [],
+      "upcoming_event_count": 2,
+      "url": "https://www.bandsintown.com/a/15590844?came_from=267&app_id=edbcb8045f7ebcadf842d9e6bd826357"
+    },
     "artist_id": "15590844",
     "bandsintown_plus": false,
     "datetime": "2026-01-31T19:00:00",
